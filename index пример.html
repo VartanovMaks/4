@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+    <script>
+    let carModels = [
+        {id: 100, model: 'sl600', producer: 'Mercedes', tankVolume: 70, horsePower: 220, image:"img/mercedes.jpg"},
+        {id: 1300, model: 'e340', producer: 'BMW', tankVolume: 65, horsePower: 210, image:"img/bmw.jpg"},
+        {id: 1003, model: 'Phaeton', producer: 'Cadillac', tankVolume: 80, horsePower: 260, image:"img/cadillac.jpg"}
+    ];
+        /* for (let car of carModels) {
+            let carDiv =  document.createElement('div');
+            carDiv.classList.add('item');
+            carDiv.innerText = (`${car.producer} ${car.model}`);
+            document.body.appendChild(carDiv);
+        } */
+        for (let car of carModels) {
+            let container =  document.createElement('div');
+            let h2 =  document.createElement('h2');
+            h2.innerText = (`${car.producer} ${car.model}`);
+            container.appendChild(h2);
+            
+            let img = document.createElement('img');
+            img.src = car.image;
+            img.style.width = '300px';
+            container.appendChild(img);
+
+            document.body.appendChild(container);
+            // document.getElementsByClassName('wrap')[0].appendChild(container); если есть общий контейнер обложка
+        }
+    </script>
+       
+</body>
+</html>

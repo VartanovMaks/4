@@ -8,7 +8,7 @@
 }, {
     name: 'petya',
     age: 30,
-    status: true,
+    status: true, 
     address: {city: 'New York', country: 'USA', street: 'East str', houseNumber: 21}
 }, {
     name: 'kolya',

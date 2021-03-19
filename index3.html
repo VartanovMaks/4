@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- - створити розмітці блок з id, class та текстом в середені. Зчитати окремо цей текст 
+    з селекторів по id , class та тегу
+    - змінити цей текст використовуючи селектори id, class,  tag
+    - змінити висоту та ширину блоку використовуючи селектори id, class,  tag -->
+    
+
+    <script>
+        let container =  document.createElement('div');
+        container.id = 'div-id';
+        container.classList = 'div-class';
+        container.innerText = ' Такий собі текст';
+        document.body.appendChild(container);
+        /* Считываем  */
+        console.log( document.getElementById('div-id').innerText);
+        console.log( document.getElementsByClassName('div-class')[0].innerText);
+        console.log(document.getElementsByTagName('div')[0].innerText);
+        
+        /* меняем  */
+        document.getElementById('div-id').innerText = 'Заміна по ИД';
+        console.log( document.getElementById('div-id').innerText);
+        document.getElementsByClassName('div-class')[0].innerText = 'Те саме по класу';
+        console.log( document.getElementsByClassName('div-class')[0].innerText);
+        document.getElementsByTagName('div')[0].innerText = 'Заміна по Tag name';
+        console.log(document.getElementsByTagName('div')[0].innerText);
+        
+        /* меняем размеры */
+        document.getElementById('div-id').style.height = '200px';
+        document.getElementsByClassName('div-class')[0].style.width = '400px';
+        document.getElementsByTagName('div')[0].style.background = 'lightblue';
+       
+        /* - за допомоги document.createElement та appendChild створити таблицю 
+        на 1 рядок з трьома ячейками всередені
+        - за допомоги document.createElement, appendChild та циклу створити таблицю 
+        на 10 рядків з трьома ячейками всередені */
+        let table1 =  document.createElement('table');
+        let tableRow =  document.createElement('tr');
+        let cell=[];
+        for (let i=0; i<3; i++){
+            cell[i] = document.createElement('td');
+            cell[i].style.width = '100px';
+            cell[i].style.height = '100px';
+            cell[i].style.border = '1px double black';
+            tableRow.appendChild(cell[i]);
+        };
+        table1.appendChild(tableRow);
+        document.body.appendChild(table1);
+        
+        let table2 =  document.createElement('table');
+        let rows = [];
+        for (let i=0; i<10; i++){
+            rows[i] = document.createElement('tr');
+            for (let k=0; k<3; k++){
+                cell[k] = document.createElement('td');
+                cell[k].style.width = '200px';
+                cell[k].style.height = '200px';
+                cell[k].style.border = '1px double red';
+                cell[k].innerText = ` row ${i+1}, col ${k+1} `;
+                rows[i].appendChild(cell[k]);
+            };  
+            table2.appendChild(rows[i]);
+        }
+        document.body.appendChild(table2);
+        /* - за допомоги document.createElement, appendChild та 2х циклів 
+        створити таблицю на 10 рядків з 5 ячейками всередені */
+        
+        let table3 =  document.createElement('table');
+        for (let i=0; i<10; i++){
+            rows[i] = document.createElement('tr');
+            for (let k=0; k<5; k++){
+                cell[k] = document.createElement('td');
+                cell[k].style.width = '50px';
+                cell[k].style.height = '50px';
+                cell[k].style.border = '1px double green';
+                cell[k].style.textAlign = 'center';
+                cell[k].innerText = ` row ${i+1}, col ${k+1} `;
+                rows[i].appendChild(cell[k]);
+            };  
+            table3.appendChild(rows[i]);
+        }
+        document.body.appendChild(table3);
+        
+        /* - за допомоги document.createElement, appendChild та 2х циклів створити таблицю 
+        на n рядків з m ячейками всередені. n та m отримати з prompt */
+        let m = prompt('Вкажіть кількість рядків',1);
+        let n = prompt('Вкажіть кількість ячеек ',1);
+        
+        let table4 =  document.createElement('table');
+        for (let i=0; i<m; i++){
+            rows[i] = document.createElement('tr');
+            for (let k=0; k<n; k++){
+                cell[k] = document.createElement('td');
+                cell[k].style.width = '800px';
+                cell[k].style.height = '50px';
+                cell[k].style.border = '5px double yellow';
+                cell[k].style.textAlign = 'center';
+                cell[k].innerText = ` row ${i+1}, col ${k+1} `;
+                rows[i].appendChild(cell[k]);
+            };  
+            table4.appendChild(rows[i]);
+        }
+        document.body.appendChild(table4);
+        
+    </script>   
+</body>
+</html>

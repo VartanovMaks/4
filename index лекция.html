@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id='target'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, et!</div>
+    <p class='acdc'>Lorem ipsum dolor sit amet.</p>
+    <div class = 'acdc'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, fugit corrupti. Neque itaque harum dolorum nihil cum ut voluptatibus eveniet.</div>
+
+    <script>
+        let user = {
+            name: 'vasya',
+            age: 31,
+            wife: { name:'Anna', age:18, status: false}
+        }
+        //console.log(document.head);
+        //console.log(document.body);
+        //console.log(document.body.children[0]);
+        /* let target = document.getElementById('target');
+        console.log(target);
+        target.innerText = 'erere33434r'
+        target.style.background = 'grey';
+        target.style.marginTop = '100px'; */
+
+        /* let elementNodeListOf = document.querySelectorAll('#target');  // находит все вхождения
+        console.log(elementNodeListOf); */
+        // document.querySelector('#target');  // находит первое вхождение
+        /* let elementNodeListOf = document.querySelectorAll('div');
+        console.log(elementNodeListOf);
+ */
+        /* let divList = document.getElementsByTagName('div');
+        console.log(divList);
+        for (const item of divList) {
+            item.style.background = 'yellow'
+            item.innerText = '1112  12 1 2 12 12 12 '
+        } */
+
+        /* let acdclist =  document.getElementsByClassName('acdc');
+        console.log(acdclist); */
+
+        let target = document.getElementById('target');
+        target.classList.add('qeen');
+        target.classList.remove('qeen');
+
+
+
+
+
+
+    </script>
+       
+</body>
+</html>
